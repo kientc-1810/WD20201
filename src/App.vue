@@ -1,12 +1,15 @@
 <script setup>
-import SlideVue1 from "./components/SlideVue1.vue";
+import SlideVue2 from "./components/SlideVue2.vue";
+
+// import SlideVue1 from "./components/SlideVue1.vue";
 // import HomeView from "./views/HomeView.vue";
 </script>
 
 <template>
   <header>
     <!-- <HomeView /> -->
-    <SlideVue1/>
+    <!-- <SlideVue1/> -->
+    <SlideVue2 />
   </header>
 </template>
 
