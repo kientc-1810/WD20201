@@ -1,92 +1,103 @@
 <template>
-  <!-- <div>
-    <h1>Bộ đếm số lần nhấp chuột</h1>
-    <p>Số đếm: {{ count }}</p>
-    <button @click="increment">Lượt click</button>
-  </div> -->
+  <div>
+    <!-- Gắn kết nội suy và gắn kết sự kiện -->
+    <!-- <h1>Hiển thị tên ban đầu</h1>
+    <br />
+    <p>Họ và tên: {{ myName }}</p>
+    <br />
+    <!-- Sau khi ấn nút thì sẽ được đổi thành một tên khác -->
+    <!-- <button class="btn btn-success" @click="changeName">Đổi tên</button> -->
 
-  <!-- khai báo option API -->
-  <!-- <div>
-    <h1>Bộ đếm số lần nhấp chuột</h1>
-    <p>Số đếm: {{ count }}</p>
-    <button @click="increment">Lượt click</button>
-  </div> -->
+    <!-- Đồng bộ 2 chiều -->
+    <!-- <h1>Số ban đầu {{ count }}</h1>
+    <input type="text" v-model="count" /> -->
 
-  <!-- <div class="container">
-    <h1 class="display-4 mb-3">Thông tin khóa học</h1>
-    <ul class="list-group">
-      <li class="list-group-item">Mã môn: {{ idCode }}</li>
-      <li class="list-group-item">Tên môn: {{ name }}</li>
-      <li class="list-group-item">Tên lớp: {{ nameClass }}</li>
-      <li class="list-group-item">Trạng thái: {{ isActive ? "Đang mở" : "Đã đóng" }}</li>
-    </ul>
-  </div> -->
+    <!-- Gắn kết thuộc tính -->
+    <!-- <div v-bind:class="active">{{ content }}</div> -->
 
-  <!-- khai báo kết hợp ref và reactive -->
-  <div class="container my-5">
-    <h1 class="display-4 mb-3">Thông tin sinh viên</h1>
-    <ul class="list-group">
-      <!-- dùng reactive để gọi các trạng thái -->
-      <li class="list-group-item">Họ và tên: {{ sinhVien.hoTen }}</li>
-      <li class="list-group-item">Tuổi: {{ sinhVien.tuoi }}</li>
-      <li class="list-group-item">Năm sinh: {{ sinhVien.namSinh }}</li>
-      <li class="list-group-item">Khóa học: {{ sinhVien.khoaHoc }}</li>
-      <!-- dùng ref để gọi các trạng thái -->
-      <li class="list-group-item">Môn học: {{ monHoc }}</li>
-    </ul>
+    <!-- Gắn kết thuộc tính cho đối tượng -->
+    <!-- <div :class="{ active: state.isActive }">Nội dung</div>
+    <button @click="toggleActive">Toggle Active</button> -->
+
+    <!-- mảng -->
+    <!-- <div :class="[activeClass, errorClass]">{{ message }}</div> -->
+
+    <!-- style binding -->
+    <!-- áp dụng với đối tượng -->
+    <!-- <div :style="styleObject">HIHI</div> -->
+
+    <!-- áp dụng với điều kiện -->
+    <div :style="dynamicStyle">HAHA</div>
   </div>
 </template>
 
 <script setup>
+// Gắn kết nội suy và gắn kết sự kiện
 // import { ref } from "vue";
-// // khai báo hàng count ban đầu để sử dụng
-// const count = ref(0);
-// // khai báo hàm xử lý số đếm
-// function increment() {
-//   count.value++;
+// const myName = ref("Nguyễn Văn A");
+// function changeName() {
+//   myName.value = "Hồ Văn B";
 // }
 
-// khai báo option API
-// export default {
-//   data() {
-//     return {
-//       count: 0,
-//     };
-//   },
-//   methods: {
-//     increment() {
-//       this.count++;
-//     },
-//   },
-// };
-
-// // khai báo của composition API (phải có setup ở script)
+// Đồng bộ 2 chiều
 // import { ref } from "vue";
 // const count = ref(0);
 
-// // xây dựng hàm định nghĩa tăng giá trị lên 1
-// const increment = () => {
-//   count.value++;
-// };
-
-// khai báo các trạng thái sử dụng ref
+// Gắn kết thuộc tính
 // import { ref } from "vue";
-// const idCode = ref("WEB2072");
-// const name = ref("Frontend-Framework");
-// const nameClass = ref("WD20201");
-// const isActive = ref("true");
+// const content = ref("xin chào");
 
-import { ref, reactive } from "vue";
-// khai báo các trạng thái sử dụng ref:
-const monHoc = ref("Frontend-Framework");
-// khai báo các trạng thái sử dụng reactive
-const sinhVien = reactive({
-  hoTen: "Nguyễn Văn A",
-  // hoTen: thuộc tính, Nguyễn Văn A: giá trị của thuộc tính
-  tuoi: 20,
-  namSinh: 2005,
-  khoaHoc: "K20",
-});
+// Gắn kết thuộc tính cho đối tượng
+// import { reactive } from "vue";
+// const state = reactive({
+//   isActive: true,
+// });
+
+// function toggleActive() {
+//   state.isActive = !state.isActive;
+// }
+
+// mảng
+// import { ref } from "vue";
+// const message = ref("Xin chào cả lớp");
+// const activeClass = ref("active");
+// const errorClass = ref("text-danger");
+
+// Style binding
+// áp dụng với đối tượng
+// import { ref } from "vue";
+// // khai báo một đối tượng chứa các thuộc tính css
+// const styleObject = ref({
+//   color: "blue",
+//   backgroundColor: "lightgray",
+//   fontSize: "20px",
+// });
+
+// áp dụng với điều kiện
+import { ref, computed } from "vue";
+// Trạng thái để điều chỉnh kiểu css
+const isActive = ref(false);
+// Tạo một thuộc tính css động dựa trên trạng thái
+const dynamicStyle = computed(() => ({
+  color: isActive.value ? "green" : "red",
+  fontSize: isActive.value ? "20px" : "10",
+}));
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+// .active {
+//   background-color: green;
+//   color: white;
+//   padding: 10px;
+// }
+
+// .active {
+//   background-color: green;
+//   color: white;
+//   padding: 10px;
+// }
+
+// .text-danger {
+//   color: red;
+// }
+</style>
