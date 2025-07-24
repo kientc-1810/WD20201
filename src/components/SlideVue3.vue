@@ -59,7 +59,7 @@
     </ul> -->
 
     <!-- dùng v-for để duyệt dữ liệu dạng đối tượng -->
-    <h4 class="text-success">Danh sách món ăn (đối tượng)</h4>
+    <!-- <h4 class="text-success">Danh sách món ăn (đối tượng)</h4> -->
     <!-- <ul class="list-group">
       <li class="list-group-item" v-for="(price, food, index) in des_food" :key="index">
         {{ index + 1 }} . {{ food }} . {{ price }} USD
