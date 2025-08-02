@@ -1,7 +1,7 @@
 <script setup>
-import SlideVue2 from "./components/SlideVue2.vue";
-import SlideVue3 from "./components/SlideVue3.vue";
-import SlideVue4 from "./components/SlideVue4.vue";
+// import SlideVue2 from "./components/SlideVue2.vue";
+// import SlideVue3 from "./components/SlideVue3.vue";
+// import SlideVue4 from "./components/SlideVue4.vue";
 
 // import SlideVue1 from "./components/SlideVue1.vue";
 // import HomeView from "./views/HomeView.vue";
@@ -13,7 +13,8 @@ import SlideVue4 from "./components/SlideVue4.vue";
     <!-- <SlideVue1/> -->
     <!-- <SlideVue2 /> -->
     <!-- <SlideVue3 /> -->
-    <SlideVue4 />
+    <!-- <SlideVue4 /> -->
+    <router-view></router-view>
   </header>
 </template>
 

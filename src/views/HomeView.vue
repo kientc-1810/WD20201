@@ -1,7 +1,8 @@
-<script setup></script>
+<script setup>
+import StudentList from "@/components/StudentList.vue";
+</script>
 
 <template>
-  <main>
-    <h1>Xin chào, lớp ăn trưa chưa?</h1>
-  </main>
+  <h1>Danh sách sinh viên</h1>
+  <StudentList />
 </template>

@@ -1,0 +1,24 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "kientc",
+      "studentCode": "PH12345"
+    },
+    {
+      "id": 2,
+      "name": "trungnt173",
+      "studentCode": "PH9876"
+    },
+    {
+      "id": 3,
+      "name": "hienlv12",
+      "studentCode": "PH65452"
+    },
+    {
+      "name": "Nguyễn Văn A",
+      "studentCode": "PH12657",
+      "id": 4
+    }
+  ]
+}
