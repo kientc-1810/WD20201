@@ -18,8 +18,18 @@
           <td>{{ student.name }}</td>
           <td>{{ student.studentCode }}</td>
           <td>
-            <button class="btn btn-primary btn-sm">Chi tiết</button>
-            <button class="btn btn-warning btn-sm">Sửa</button>
+            <button
+              class="btn btn-primary btn-sm"
+              @click="$router.push(`/detail/${student.id}`)"
+            >
+              Chi tiết
+            </button>
+            <button
+              class="btn btn-warning btn-sm"
+              @click="$router.push(`/edit/${student.id}`)"
+            >
+              Sửa
+            </button>
             <button class="btn btn-danger btn-sm" @click="deleteStudent(student.id)">
               Xóa
             </button>
